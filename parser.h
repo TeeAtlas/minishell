@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:05:50 by taboterm          #+#    #+#             */
-/*   Updated: 2023/09/13 11:46:51 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:31:10 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <signal.h> /* signal functions */
-# include <erno.h> /* for exit errors */ 
-# include <sys/type.h>
+# include <errno.h> /* for exit errors */ 
+# include <sys/types.h>
 # include <sys/stat.h>
 
-//macros: \t=tab \n=new line \v=verticle tab \f=form feed \r=carriage return
-# define BLANK_SPACE " \t\n\v\f\r"
+// macros: \t=tab \n=new line \v=verticle tab \f=form feed \r=carriage return
+# define WHITE_SPACE " \t\n\v\f\r"
 
 
 /*
@@ -35,7 +35,7 @@ std_out: standard output stream usually represented as 1 write output
 typedef	struct s_ms {
 	char	**toks; // double pointer becuase it's an array of strings
 	char	**args; // flags/args
-	char	**cmd_path; // 
+	char	**cmd_path; 
 	int		n_cmds;
 	int		n_words;
 	int		*std_in; //pointer to input stream
@@ -43,5 +43,13 @@ typedef	struct s_ms {
 	int		fd_in; // not sure if we should use fd 
 	int		fd_out; // or std?
 } t_ms; 
+
+/* simple parsing */
+int		whitespace(char c);
+int		dble_quotes(char c);
+int		sgl_quotes(char c);
+void	tokens(int ac, char **str);
+
+
 
 #endif
