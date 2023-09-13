@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:05:50 by taboterm          #+#    #+#             */
-/*   Updated: 2023/09/13 17:31:10 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/09/13 18:03:20 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ typedef	struct s_ms {
 } t_ms; 
 
 /* simple parsing */
-int		whitespace(char c);
-int		dble_quotes(char c);
-int		sgl_quotes(char c);
+int		ignore(char c);
 void	tokens(int ac, char **str);
 
 
