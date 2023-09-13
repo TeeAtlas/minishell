@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:05:50 by taboterm          #+#    #+#             */
-/*   Updated: 2023/09/12 19:14:52 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:16:37 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,32 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <signal.h>
+# include <signal.h> /* signal functions */
+# include <erno.h> /* for exit errors */ 
 # include <sys/type.h>
 # include <sys/stat.h>
 
-//macro vars: \t=tab \n=new line \v=verticle tab \f=form feed \r=carriage return
+//macros: \t=tab \n=new line \v=verticle tab \f=form feed \r=carriage return
 # define BLANK_SPACE " \t\n\v\f\r"
 
 
 /*
-struct for commands - commands are separated by pipes:
-this is comprised of tokens ex: ls, -la, cat, pwd...
-command_path: ex
+toks: this is comprised of tokens ex: ls, -la, cat, pwd...
+args: -la, a, 
+cmd_path: "/bin/usr/echo" executable file to cmds like echo
+std_in: standard input stream usually represented as 0 read from input file 
+std_out: standard output stream usually represented as 1 write output
 */
-typedef	struct s_cmd {
-	char	*token;
-	char	*cmd;
-	char	**args; 
+typedef	struct s_ms {
+	char	**toks; // double pointer becuase it's an array of strings
+	char	**args; // flags/args
+	char	**cmd_path;
 	int		n_cmds;
 	int		n_words;
-	int		fd_in;
-	int		fd_out;
-}
+	int		*std_in;
+	int		*std_out;
+	int		fd_in; // not sure if we should use fd 
+	int		fd_out; // or std?
+} t_ms; 
 
 #endif
