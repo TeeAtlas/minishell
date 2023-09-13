@@ -6,7 +6,7 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:05:50 by taboterm          #+#    #+#             */
-/*   Updated: 2023/09/13 11:44:44 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:46:51 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@
 
 
 /*
-toks: this is comprised of tokens ex: ls, -la, cat, pwd...
-args: -la, a, 
+toks: this is comprised of tokens ex: ls, -la, cat, pwd, echo...
 cmd_path: "/bin/usr/echo" value associated with with 'PATH' varaible
 std_in: standard input stream usually represented as 0 read from input file 
 std_out: standard output stream usually represented as 1 write output
