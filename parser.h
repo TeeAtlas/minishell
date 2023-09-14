@@ -6,14 +6,14 @@
 /*   By: taboterm <taboterm@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 19:05:50 by taboterm          #+#    #+#             */
-/*   Updated: 2023/09/13 20:11:22 by taboterm         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:31:02 by taboterm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSER_H
 # define PARSER_H
 
-
+#include "./libft/libft.h"
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
